@@ -6,10 +6,27 @@
   "icons": { "128": "images/icon.png" },
   "background": {
     "persistent": false,
-    "scripts": ["js/bg.js"]
+    "scripts": [
+      "js/bg.js",
+      "js/popup.js",
+      "js/jquery.min.js"
+    ]
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/bg.js",
+        "js/popup.js",
+        "js/jquery.min.js"
+      ]
+    }
+  ],
   "permissions": [
     "activeTab",
+    "*://*/*",
     "http://*.google.com/",
     "https://*.google.com/"
   ],
